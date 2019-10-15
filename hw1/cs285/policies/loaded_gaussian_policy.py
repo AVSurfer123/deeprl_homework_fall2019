@@ -64,7 +64,7 @@ class Loaded_Gaussian_Policy(BasePolicy):
 
     def apply_nonlin(self, x):
         if self.nonlin_type == 'lrelu':
-            return lrelu(x, leak=.01)
+            return tf.relu(x, leak=.01)
         elif self.nonlin_type == 'tanh':
             return tf.tanh(x)
         else:
